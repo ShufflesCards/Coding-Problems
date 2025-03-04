@@ -58,12 +58,9 @@ for i in range(times):
     for j in range(len(bigString)//len(keyWord)+1):
         #puts input into grid when keyword is in alphabetic order
         scrambledGrid.append(list(bigString[len(keyWord)*j:len(keyWord)*j+len(keyWord)]))
-    
 
     # you can tell where the letters should by seeing if they should shift over 
     lastRow = scrambledGrid.pop(-1)
-
-
 
     #print(scrambledGrid)
     unscrambledGrid = [] 
@@ -79,7 +76,6 @@ for i in range(times):
                 for column in zip(*scrambledGrid):
                     
                     if x==k:
-                        
                         unscrambledGrid.append(list(column))
                     x+=1
 
@@ -89,10 +85,15 @@ for i in range(times):
     # check the first letter in the alphabeicaly sorted key and place that in the unscrambledGrid
 
 
+    '''
+    MAKE FASTER
+
+    Add padding to use .zip
+    
+    '''
+    
     for j in range(len(lastRow)):
         #check place value of ordered keyword and how it compares to unordered
-        
-
 
         # move below zip stuff
 
@@ -138,3 +139,6 @@ for i in range(times):
         ans+=alphabetGrid[letterToNum[x]][letterToNum[y]]
     
     print(ans)
+
+
+
